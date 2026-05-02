@@ -44,8 +44,6 @@ FILE* FAKEtmpfile()
 #define CONFDIR "sd:/HOMEBREW/ST"
 #elif defined(VITA)
 #define CONFDIR "ux0:/data/retroarch/system"
-#elif defined(__EMSCRIPTEN__)
-#define CONFDIR "."
 #else
 #define CONFDIR "."
 //#warning "conf dir for linux"
