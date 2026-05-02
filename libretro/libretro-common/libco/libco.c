@@ -35,6 +35,8 @@ void genode_free_secondary_stack(void *stack);
     #include "scefiber.c"
   #elif defined(__ARM_EABI__) || defined(__arm__)
     #include "armeabi.c"
+  #elif defined(__EMSCRIPTEN__)
+    #include "sjlj.c"
   #else
     #include "sjlj.c"
   #endif
