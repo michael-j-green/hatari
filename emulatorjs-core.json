@@ -1,0 +1,15 @@
+{
+    "name": "hatari",
+    "extensions": [ "st", "stx", "msa", "dim", "ipf", "zip", "gz" ],
+    "makeoptions": {
+        "buildpath": "./",
+        "makescript": "Makefile.libretro",
+        "arguments": []
+    },
+    "options": {
+        "supportsMouse": true
+    },
+    "save": "nvr",
+    "license": "gpl.txt",
+    "repo": "https://github.com/EmulatorJS/hatari"
+}

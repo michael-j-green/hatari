@@ -18,6 +18,7 @@ endif
 endif
 
 EXTERNAL_ZLIB ?= 0
+EMULATORJS_THREADS ?= 0
 
 TARGET_NAME	:= hatari
 GIT_VERSION := " $(shell git rev-parse --short HEAD || echo unknown)"
@@ -212,6 +213,11 @@ else ifeq ($(platform), emscripten)
    CFLAGS += -Wno-warn-absolute-paths -DEMSCRIPTEN
    PLATFLAGS := -DLSB_FIRST -DALIGN_DWORD
    EXTERNAL_ZLIB = 1
+   ifeq ($(EMULATORJS_THREADS), 1)
+      CFLAGS += -pthread
+      CXXFLAGS += -pthread
+      LDFLAGS += -pthread
+   endif
 
 else
    PLATFLAGS :=  -DLSB_FIRST -DALIGN_DWORD -DWIN32PORT -DWIN32
